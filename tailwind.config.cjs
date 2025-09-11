@@ -16,6 +16,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'fraunces': ['Fraunces', 'serif'],
+      },
       colors,
       typography: {
         DEFAULT: {
