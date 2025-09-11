@@ -1,8 +1,9 @@
 import { createClient } from "@sanity/client";
+// Sanity client configuration
 
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  apiVersion: "2025-08-30",
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2025-01-01',
   useCdn: true,
 });

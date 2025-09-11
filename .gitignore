@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Logs
 logs
 *.log
@@ -168,4 +168,3 @@ vite.config.ts.timestamp-*
 
 # Dotenv and similar local-only files
 *.local
->>>>>>> d246d9d (feat: bootstrap sanity studio)
