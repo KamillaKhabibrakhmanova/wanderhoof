@@ -2,39 +2,39 @@
   "node": {
     "7fb96985a6c99720ac43957e76532cdce9c457fd1a": {
       "workers": {
-        "app/posts/[slug]/page": {
+        "app/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227fb96985a6c99720ac43957e76532cdce9c457fd1a%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fd8871979683925c4ae973d02d61611a4beb50e73%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227fa69e74cebc51e806ed3ddccfdcfa362aa1693e9a%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/posts/[slug]/page": "action-browser"
+        "app/page": "action-browser"
       },
       "filename": "node_modules/@sanity/next-loader/dist/server-actions.js",
       "exportedName": "setPerspectiveCookie"
     },
     "7fd8871979683925c4ae973d02d61611a4beb50e73": {
       "workers": {
-        "app/posts/[slug]/page": {
+        "app/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227fb96985a6c99720ac43957e76532cdce9c457fd1a%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fd8871979683925c4ae973d02d61611a4beb50e73%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227fa69e74cebc51e806ed3ddccfdcfa362aa1693e9a%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/posts/[slug]/page": "action-browser"
+        "app/page": "action-browser"
       },
       "filename": "node_modules/@sanity/next-loader/dist/server-actions.js",
       "exportedName": "revalidateSyncTags"
     },
     "7fa69e74cebc51e806ed3ddccfdcfa362aa1693e9a": {
       "workers": {
-        "app/posts/[slug]/page": {
+        "app/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227fb96985a6c99720ac43957e76532cdce9c457fd1a%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fd8871979683925c4ae973d02d61611a4beb50e73%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227fa69e74cebc51e806ed3ddccfdcfa362aa1693e9a%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/posts/[slug]/page": "action-browser"
+        "app/page": "action-browser"
       },
       "filename": "node_modules/next-sanity/dist/visual-editing/server-actions.js",
       "exportedName": "revalidateRootLayout"

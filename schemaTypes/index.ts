@@ -1,4 +1,5 @@
 import blockContent from "./blockContent"
 import post from "./post"
+import siteSettings from "./siteSettings"
 
-export const schemaTypes = [blockContent, post, rideReview, guide, siteSettings]
+export const schemaTypes = [blockContent, post, siteSettings]
