@@ -15,23 +15,37 @@ export default function PostCard({
   return (
     <Link
       href={href}
-      className="block rounded-2xl overflow-hidden border-gray-200 border hover:shadow-md hover:bg-sage transition-all duration-200 hover:border-gray-300 post-card-bg"
+      className="flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group border border-gray-100"
     >
-      {img && (
-        <Image
-          src={img}
-          alt=""
-          width={800}
-          height={500}
-          className="h-48 w-full object-cover"
-        />
+      {img ? (
+        <div className="relative h-[400px] w-full overflow-hidden">
+          <Image
+            src={img}
+            alt={title}
+            width={1200}
+            height={800}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          {/* Title overlay on image */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+            <h3 className="font-fraunces text-3xl md:text-4xl text-white py-8 px-6 md:p-6 w-full leading-tight bg-black/30 backdrop-blur-[2px]">
+              {title}
+            </h3>
+          </div>
+        </div>
+      ) : (
+        <div className="relative h-[400px] w-full overflow-hidden bg-gray-200 flex items-center justify-center">
+          <h3 className="font-fraunces text-3xl md:text-4xl text-mutedpurple p-6 text-center leading-tight">
+            {title}
+          </h3>
+        </div>
       )}
-      <div className="p-4">
-        <h3 className="font-fraunces text-xl text-mutedpurple mb-1">{title}</h3>
-        {subtitle && (
-          <p className="text-sm text-mutedpurple/70 line-clamp-3">{subtitle}</p>
-        )}
-      </div>
+      {/* Excerpt below image */}
+      {subtitle && (
+        <div className="flex-1 py-8 px-6 md:p-6 bg-white group-hover:bg-sage/20 transition-colors duration-300">
+          <p className="text-base text-mutedpurple/70 line-clamp-3 leading-relaxed">{subtitle}</p>
+        </div>
+      )}
     </Link>
   )
 }

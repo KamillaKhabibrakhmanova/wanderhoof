@@ -26,13 +26,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <div className="relative">
           {/* Logo - positioned at top, extending beyond nav */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50 flex justify-center pt-2">
-            <div className="border border-gray-400">
+            <div className="p-3 md:p-0 border border-gray-400">
               <Image
                 src="/WanderhoofLogo.png"
                 alt="WanderHoof - The world is better on horseback."
                 width={400}
                 height={100}
-                className="h-24 w-auto md:h-32"
+                className="h-16 w-auto md:h-32"
                 priority
               />
             </div>

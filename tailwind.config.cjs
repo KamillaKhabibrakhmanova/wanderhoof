@@ -6,6 +6,8 @@ const colors = {
   terracotta: '#c97d60',
   mutedpurple: '#372549',
   tealpop: '#0081a7',
+  cream: '#faf8f5',
+  beige: '#f5f1eb',
 };
 
 /** @type {import('tailwindcss').Config} */
