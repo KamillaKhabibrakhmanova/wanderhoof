@@ -56,10 +56,49 @@ export default defineType({
             type: 'datetime'
         }),
         defineField({
+            name: 'author',
+            title: 'Author',
+            type: 'string',
+            initialValue: 'Kamilla',
+            description: 'Post author name'
+        }),
+        defineField({
+            name: 'featured',
+            title: 'Featured',
+            type: 'boolean',
+            description: 'Feature this post on the homepage',
+            initialValue: false
+        }),
+        defineField({
+            name: 'categories',
+            title: 'Categories',
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: {
+                list: [
+                    { title: 'Europe', value: 'europe' },
+                    { title: 'South America', value: 'southAmerica' },
+                    { title: 'Africa', value: 'africa' },
+                    { title: 'Asia', value: 'asia' },
+                    { title: 'North America', value: 'northAmerica' },
+                    { title: 'Central America', value: 'centralAmerica' }
+                ]
+            },
+            description: 'Select one or more categories for this post'
+        }),
+        defineField({
             name: 'body',
             title: 'Body',
             type: 'blockContent',
             hidden: ({document}) => document?.postType === 'rideReview'
+        }),
+        defineField({
+            name: 'affiliateDisclosure',
+            title: 'Affiliate Disclosure',
+            type: 'boolean',
+            initialValue: false,
+            hidden: ({document}) => document?.postType !== 'shoppingGuide',
+            description: 'Enable if this post contains affiliate links'
         }),
 
         // Ride Review specific fields
@@ -84,11 +123,18 @@ export default defineType({
         defineField({
             name: 'riderLevel',
             title: 'Rider Level',
-            type: 'string',
+            type: 'array',
+            of: [{ type: 'string' }],
             options: {
-                list: ['Beginner', 'Intermediate', 'Advanced', 'Mixed']
+                list: [
+                    { title: 'Beginner', value: 'Beginner' },
+                    { title: 'Intermediate', value: 'Intermediate' },
+                    { title: 'Advanced', value: 'Advanced' },
+                    { title: 'Mixed', value: 'Mixed' }
+                ]
             },
-            hidden: ({document}) => document?.postType !== 'rideReview'
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Select one or more rider experience levels suitable for this ride'
         }),
         defineField({
             name: 'hoursInSaddle',
@@ -97,10 +143,58 @@ export default defineType({
             hidden: ({document}) => document?.postType !== 'rideReview'
         }),
         defineField({
+            name: 'rideType',
+            title: 'Ride Type',
+            type: 'string',
+            options: {
+                list: [
+                    { title: 'Multi-Day Trip', value: 'multiDay' },
+                    { title: 'Day Ride', value: 'dayRide' }
+                ]
+            },
+            initialValue: 'multiDay',
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Select whether this is a multi-day trip or a day ride'
+        }),
+        defineField({
             name: 'bestSeason',
             title: 'Best Season',
-            type: 'string',
-            hidden: ({document}) => document?.postType !== 'rideReview'
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: {
+                list: [
+                    { title: 'Spring', value: 'spring' },
+                    { title: 'Summer', value: 'summer' },
+                    { title: 'Fall', value: 'fall' },
+                    { title: 'Winter', value: 'winter' }
+                ]
+            },
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Select one or more seasons suitable for this ride. NOTE: If you see errors, this field was changed from string to array - please re-save this document to migrate the data.'
+        }),
+        defineField({
+            name: 'availableMonths',
+            title: 'Available Months',
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: {
+                list: [
+                    { title: 'January', value: 'january' },
+                    { title: 'February', value: 'february' },
+                    { title: 'March', value: 'march' },
+                    { title: 'April', value: 'april' },
+                    { title: 'May', value: 'may' },
+                    { title: 'June', value: 'june' },
+                    { title: 'July', value: 'july' },
+                    { title: 'August', value: 'august' },
+                    { title: 'September', value: 'september' },
+                    { title: 'October', value: 'october' },
+                    { title: 'November', value: 'november' },
+                    { title: 'December', value: 'december' }
+                ]
+            },
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Select which months this ride is available'
         }),
         defineField({
             name: 'quickVerdict',
@@ -134,7 +228,8 @@ export default defineType({
             title: 'Accommodation & Food',
             type: 'array',
             of: [{ type: 'block' }],
-            hidden: ({document}) => document?.postType !== 'rideReview'
+            hidden: ({document}) => document?.postType !== 'rideReview' || document?.rideType === 'dayRide',
+            description: 'Only applicable for multi-day trips'
         }),
         defineField({
             name: 'safetyInsurance',
@@ -229,8 +324,8 @@ export default defineType({
                     { title: '5 Stars', value: 5 }
                 ]
             },
-            hidden: ({document}) => document?.postType !== 'rideReview',
-            description: 'Rate the accommodation and food quality (1-5 stars)'
+            hidden: ({document}) => document?.postType !== 'rideReview' || document?.rideType === 'dayRide',
+            description: 'Rate the accommodation and food quality (1-5 stars) - only for multi-day trips'
         }),
         defineField({
             name: 'valueRating',
