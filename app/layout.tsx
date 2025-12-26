@@ -14,8 +14,8 @@ export const metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en">
-      <body className={`${fraunces.variable} font-fraunces`}>
+    <html lang="en" className="bg-cream">
+      <body className={`${fraunces.variable} font-fraunces bg-cream min-h-screen`}>
         <div
           className="hidden
   text-sage text-deepgreen text-terracotta text-mutedpurple text-tealpop
@@ -86,6 +86,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             </div>
           </header>
         </div>
+        {/* Spacer to prevent logo overlap */}
+        <div className="h-10 md:h-20"></div>
         {children}
       </body>
     </html>

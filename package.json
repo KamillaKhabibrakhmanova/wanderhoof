@@ -11,7 +11,8 @@
     "sanity": "sanity dev",
     "sanity-build": "sanity build",
     "sanity-deploy": "sanity deploy",
-    "sanity-graphql": "sanity graphql deploy"
+    "sanity-graphql": "sanity graphql deploy",
+    "migrate-gallery": "tsx scripts/migrate-gallery.ts"
   },
   "keywords": [
     "sanity"
@@ -20,13 +21,13 @@
     "@portabletext/react": "^4.0.2",
     "@sanity/client": "^7.10.0",
     "@sanity/image-url": "^1.2.0",
-    "@sanity/vision": "^4.19.0",
+    "@sanity/vision": "^4.22.0",
     "@tailwindcss/typography": "^0.5.16",
     "next": "^15.5.2",
     "next-sanity": "^10.0.15",
-    "react": "^19.1",
-    "react-dom": "^19.1",
-    "sanity": "^4.19.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "sanity": "^4.22.0",
     "styled-components": "^6.1.18",
     "tailwindcss": "^3.4.17"
   },
@@ -34,9 +35,11 @@
     "@sanity/eslint-config-studio": "^5.0.2",
     "@types/react": "^19.1",
     "autoprefixer": "^10.4.21",
+    "dotenv": "^17.2.3",
     "eslint": "^9.28",
     "postcss": "^8.4.31",
     "prettier": "^3.5",
+    "tsx": "^4.19.2",
     "typescript": "^5.8"
   },
   "prettier": {

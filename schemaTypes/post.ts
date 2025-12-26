@@ -115,10 +115,64 @@ export default defineType({
             hidden: ({document}) => document?.postType !== 'rideReview'
         }),
         defineField({
+            name: 'whenIWent',
+            title: 'When I Went',
+            type: 'string',
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Month and year of your visit (e.g., \'July 2024\')'
+        }),
+        defineField({
+            name: 'bookingInfo',
+            title: 'Booking Information',
+            type: 'object',
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            fields: [
+                {
+                    name: 'website',
+                    title: 'Website',
+                    type: 'url'
+                },
+                {
+                    name: 'email',
+                    title: 'Email',
+                    type: 'string'
+                },
+                {
+                    name: 'bookingNotes',
+                    title: 'Booking Notes',
+                    type: 'text',
+                    rows: 2
+                }
+            ]
+        }),
+        defineField({
             name: 'pricePerDay',
             title: 'Price Per Day',
             type: 'number',
-            hidden: ({document}) => document?.postType !== 'rideReview'
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Average or starting price per day'
+        }),
+        defineField({
+            name: 'priceNotes',
+            title: 'Price Notes',
+            type: 'text',
+            rows: 2,
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Explain pricing variations (e.g., different rates for different trip lengths)'
+        }),
+        defineField({
+            name: 'totalDays',
+            title: 'Total Days',
+            type: 'number',
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Total duration of the tour/trip'
+        }),
+        defineField({
+            name: 'ridingDays',
+            title: 'Riding Days',
+            type: 'number',
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Number of days actually spent riding'
         }),
         defineField({
             name: 'riderLevel',
@@ -199,7 +253,8 @@ export default defineType({
         defineField({
             name: 'quickVerdict',
             title: 'Quick Verdict',
-            type: 'text',
+            type: 'array',
+            of: [{ type: 'block' }],
             hidden: ({document}) => document?.postType !== 'rideReview'
         }),
         defineField({
@@ -271,11 +326,71 @@ export default defineType({
             name: 'gallery',
             title: 'Gallery',
             type: 'array',
-            of: [{ type: 'image' }],
-            hidden: ({document}) => document?.postType !== 'rideReview'
+            of: [{
+                type: 'object',
+                name: 'galleryImage',
+                fields: [
+                    {
+                        name: 'image',
+                        title: 'Image',
+                        type: 'image',
+                        options: { hotspot: true },
+                        validation: (Rule) => Rule.required()
+                    },
+                    {
+                        name: 'alt',
+                        title: 'Alt Text',
+                        type: 'string',
+                        description: 'Describe the image for screen readers (required for accessibility)',
+                        validation: (Rule) => Rule.required()
+                    },
+                    {
+                        name: 'caption',
+                        title: 'Caption',
+                        type: 'string',
+                        description: 'Optional short caption to display below the image'
+                    }
+                ],
+                preview: {
+                    select: {
+                        title: 'caption',
+                        media: 'image'
+                    },
+                    prepare(selection) {
+                        const {title, media} = selection
+                        return {
+                            title: title || 'No caption',
+                            media: media
+                        }
+                    }
+                }
+            }],
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Add images for the lightbox gallery carousel'
         }),
 
         // Rating fields for ride reviews
+        defineField({
+            name: 'overallRating',
+            title: 'Overall Rating',
+            type: 'number',
+            validation: (Rule) => Rule.min(1).max(5).precision(0.5),
+            options: {
+                list: [
+                    { title: '1 Star', value: 1 },
+                    { title: '1.5 Stars', value: 1.5 },
+                    { title: '2 Stars', value: 2 },
+                    { title: '2.5 Stars', value: 2.5 },
+                    { title: '3 Stars', value: 3 },
+                    { title: '3.5 Stars', value: 3.5 },
+                    { title: '4 Stars', value: 4 },
+                    { title: '4.5 Stars', value: 4.5 },
+                    { title: '5 Stars', value: 5 }
+                ]
+            },
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Your overall rating out of 5 stars (allows half stars)'
+        }),
         defineField({
             name: 'horsesAndTackRating',
             title: 'Horses & Tack Rating',
@@ -343,6 +458,56 @@ export default defineType({
             },
             hidden: ({document}) => document?.postType !== 'rideReview',
             description: 'Rate whether the ride was worth the cost (1-5 stars)'
+        }),
+        defineField({
+            name: 'valueForMoneyDescription',
+            title: 'Value for Money Description',
+            type: 'array',
+            of: [{ type: 'block' }],
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Explain why the ride is or isn\'t good value for money'
+        }),
+        defineField({
+            name: 'finalVerdict',
+            title: 'Final Verdict',
+            type: 'array',
+            of: [{ type: 'block' }],
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            description: 'Your overall conclusion and recommendation for this ride'
+        }),
+        defineField({
+            name: 'affiliateLinks',
+            title: 'Affiliate Links',
+            type: 'array',
+            hidden: ({document}) => document?.postType !== 'rideReview',
+            of: [{
+                type: 'object',
+                fields: [
+                    {
+                        name: 'product',
+                        title: 'Product Name',
+                        type: 'string'
+                    },
+                    {
+                        name: 'link',
+                        title: 'Affiliate Link',
+                        type: 'url'
+                    },
+                    {
+                        name: 'category',
+                        title: 'Category',
+                        type: 'string',
+                        options: {
+                            list: [
+                                { title: 'Gear', value: 'gear' },
+                                { title: 'Booking', value: 'booking' },
+                                { title: 'Travel', value: 'travel' },
+                                { title: 'Other', value: 'other' }
+                            ]
+                        }
+                    }
+                ]
+            }]
         })
     ],
 
