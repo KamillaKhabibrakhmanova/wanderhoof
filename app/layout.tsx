@@ -10,6 +10,9 @@ const fraunces = Fraunces({
 export const metadata = {
   title: 'WanderHoof',
   description: 'Horseback travel blog',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
