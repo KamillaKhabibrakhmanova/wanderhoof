@@ -378,14 +378,6 @@ export default defineType({
             hidden: ({document}) => document?.postType !== 'dayRideReview',
             description: 'Discuss the horses and their care/welfare'
         }),
-        defineField({
-            name: 'whatWorkedDidnt',
-            title: 'What Worked / What Didn\'t',
-            type: 'array',
-            of: [{ type: 'block' }],
-            hidden: ({document}) => document?.postType !== 'dayRideReview',
-            description: 'What was good and what could be improved'
-        }),
 
         // Final verdict (shared)
         defineField({
