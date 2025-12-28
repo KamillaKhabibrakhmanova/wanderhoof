@@ -1,5 +1,75 @@
 {
-  "node": {},
+  "node": {
+    "7f7b8b936274f129bc1fba8cedfb73e3258298f7ca": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f7b8b936274f129bc1fba8cedfb73e3258298f7ca%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fa8141ab305bbd53ab60d1418d38d318b872686c9%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f33474265247b0a96c0168822d23040b1b78507f2%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/posts/[slug]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f7b8b936274f129bc1fba8cedfb73e3258298f7ca%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fa8141ab305bbd53ab60d1418d38d318b872686c9%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f33474265247b0a96c0168822d23040b1b78507f2%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/posts/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f7b8b936274f129bc1fba8cedfb73e3258298f7ca%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fa8141ab305bbd53ab60d1418d38d318b872686c9%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f33474265247b0a96c0168822d23040b1b78507f2%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/posts/[slug]/page": "action-browser",
+        "app/posts/page": "action-browser"
+      },
+      "filename": "node_modules/@sanity/next-loader/dist/server-actions.js",
+      "exportedName": "revalidateSyncTags"
+    },
+    "7fa8141ab305bbd53ab60d1418d38d318b872686c9": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f7b8b936274f129bc1fba8cedfb73e3258298f7ca%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fa8141ab305bbd53ab60d1418d38d318b872686c9%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f33474265247b0a96c0168822d23040b1b78507f2%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/posts/[slug]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f7b8b936274f129bc1fba8cedfb73e3258298f7ca%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fa8141ab305bbd53ab60d1418d38d318b872686c9%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f33474265247b0a96c0168822d23040b1b78507f2%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/posts/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f7b8b936274f129bc1fba8cedfb73e3258298f7ca%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fa8141ab305bbd53ab60d1418d38d318b872686c9%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f33474265247b0a96c0168822d23040b1b78507f2%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/posts/[slug]/page": "action-browser",
+        "app/posts/page": "action-browser"
+      },
+      "filename": "node_modules/@sanity/next-loader/dist/server-actions.js",
+      "exportedName": "setPerspectiveCookie"
+    },
+    "7f33474265247b0a96c0168822d23040b1b78507f2": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f7b8b936274f129bc1fba8cedfb73e3258298f7ca%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fa8141ab305bbd53ab60d1418d38d318b872686c9%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f33474265247b0a96c0168822d23040b1b78507f2%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/posts/[slug]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f7b8b936274f129bc1fba8cedfb73e3258298f7ca%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fa8141ab305bbd53ab60d1418d38d318b872686c9%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f33474265247b0a96c0168822d23040b1b78507f2%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/posts/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f7b8b936274f129bc1fba8cedfb73e3258298f7ca%22%2C%22exportedName%22%3A%22revalidateSyncTags%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%2C%7B%22id%22%3A%227fa8141ab305bbd53ab60d1418d38d318b872686c9%22%2C%22exportedName%22%3A%22setPerspectiveCookie%22%2C%22filename%22%3A%22node_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%7D%5D%5D%2C%5B%22%2FUsers%2Fkamilla%2FDeveloper%2Fstudio-wanderhoof%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%7B%22id%22%3A%227f33474265247b0a96c0168822d23040b1b78507f2%22%2C%22exportedName%22%3A%22revalidateRootLayout%22%2C%22filename%22%3A%22node_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/posts/[slug]/page": "action-browser",
+        "app/posts/page": "action-browser"
+      },
+      "filename": "node_modules/next-sanity/dist/visual-editing/server-actions.js",
+      "exportedName": "revalidateRootLayout"
+    }
+  },
   "edge": {},
   "encryptionKey": "4fI5WzKhPDy3/OgFGFD+S3kH1R64WH0Cg3krLttZVQQ="
 }
