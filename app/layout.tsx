@@ -89,6 +89,21 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         {/* Spacer to prevent logo overlap */}
         <div className="h-10 md:h-20"></div>
         {children}
+
+        {/* Footer */}
+        <footer className="bg-sage border-t border-gray-200 mt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="text-center text-sm text-deepgreen/60">
+              <p className="mb-2">© {new Date().getFullYear()} WanderHoof. All rights reserved.</p>
+              <a
+                href="/privacy"
+                className="text-mutedpurple hover:text-tealpop transition-colors duration-200"
+              >
+                Privacy Policy
+              </a>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   )
