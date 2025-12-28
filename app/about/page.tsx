@@ -9,6 +9,17 @@ export default function AboutPage() {
             About Wanderhoof
           </h1>
 
+          <div className="not-prose float-right ml-6 mb-6 w-full md:w-[45%] max-w-md">
+            <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden">
+              <Image
+                src="/profile2.jpg"
+                alt="Profile"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           <h2 className="text-2xl md:text-3xl font-fraunces text-terracotta mt-12 mb-4">
             How I Almost Got Stranded in Kazakhstan (And Why I Started This Blog)
           </h2>
@@ -20,17 +31,6 @@ export default function AboutPage() {
           <p className="text-deepgreen leading-relaxed mb-4">
             That's when it hit me: horse trips are too expensive, too precious, and too hard to come by to leave to chance and the promise of a business dealer.
           </p>
-
-          <div className="my-8 md:my-12 not-prose">
-            <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden">
-              <Image
-                src="/profile1.jpg"
-                alt="Profile"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
 
           <h2 className="text-2xl md:text-3xl font-fraunces text-terracotta mt-12 mb-4">
             The Long Way Back to Horses
@@ -56,10 +56,10 @@ export default function AboutPage() {
             The Mexico Trip That Changed Everything
           </h2>
 
-          <div className="not-prose float-right ml-6 mb-6 w-full md:w-[45%] max-w-md">
+          <div className="my-8 md:my-12 not-prose">
             <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden">
               <Image
-                src="/profile2.jpg"
+                src="/profile1.jpg"
                 alt="Profile"
                 fill
                 className="object-cover"

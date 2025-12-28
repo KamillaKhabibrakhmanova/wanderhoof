@@ -4,7 +4,6 @@ import {groq} from 'next-sanity'
 import Image from 'next/image'
 import Gallery from '../../components/Gallery'
 import Accordion from '../../components/Accordion'
-import MiniGallery from '../../components/MiniGallery'
 
 const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
     title,

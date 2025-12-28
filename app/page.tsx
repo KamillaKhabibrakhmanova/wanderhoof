@@ -21,7 +21,7 @@ export default async function Home() {
   const posts: Post[] = await client.fetch(allPostsQuery);
 
   return (
-    <main className="min-h-screen bg-cream">
+    <main className="min-h-screen bg-cream -mt-10 md:-mt-20">
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] md:h-[65vh]">
         <Image
