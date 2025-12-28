@@ -60,7 +60,7 @@ const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   }`
 
 interface PostPageProps {
-  params: {slug: string}
+  params: Promise<{slug: string}>
 }
 
 export default async function PostPage({params}: PostPageProps) {
