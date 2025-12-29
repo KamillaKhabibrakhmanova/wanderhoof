@@ -1,5 +1,6 @@
 import './globals.css'
 import Image from 'next/image'
+import Script from 'next/script'
 import { Fraunces } from 'next/font/google'
 
 const fraunces = Fraunces({ 
@@ -18,6 +19,20 @@ export const metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className="bg-cream">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-N1RWL7CNYH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-N1RWL7CNYH');
+          `}
+        </Script>
+      </head>
       <body className={`${fraunces.variable} font-fraunces bg-cream min-h-screen`}>
         <div
           className="hidden
