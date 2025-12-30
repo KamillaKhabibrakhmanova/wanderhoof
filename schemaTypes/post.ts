@@ -91,7 +91,8 @@ export default defineType({
             name: 'body',
             title: 'Body',
             type: 'blockContent',
-            hidden: ({document}) => document?.postType === 'rideReview'
+            hidden: ({document}) => ['rideReview', 'dayRideReview'].includes(document?.postType as string),
+            description: 'For articles and shopping guides. Ride reviews use structured sections instead.'
         }),
         defineField({
             name: 'affiliateDisclosure',
