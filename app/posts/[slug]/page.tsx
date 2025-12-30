@@ -5,7 +5,12 @@ import Image from 'next/image'
 import Gallery from '../../components/Gallery'
 import Accordion from '../../components/Accordion'
 
-const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
+// Filter to exclude drafts in production
+const draftFilter = process.env.NODE_ENV === 'production'
+  ? `&& !(_id in path('drafts.**'))`
+  : '';
+
+const postQuery = groq`*[_type == "post" && slug.current == $slug ${draftFilter}][0]{
     title,
     body,
     postType,
