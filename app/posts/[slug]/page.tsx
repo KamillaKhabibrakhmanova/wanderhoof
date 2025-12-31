@@ -88,9 +88,19 @@ export default async function PostPage({params}: PostPageProps) {
         {[...Array(5)].map((_, i) => {
           const isFull = i < Math.floor(rating)
           const isHalf = i < rating && i >= Math.floor(rating)
+
+          if (isHalf) {
+            return (
+              <span key={i} className="relative inline-block" style={{width: '1em'}}>
+                <span className="absolute text-gray-300">★</span>
+                <span className="absolute text-yellow-500 overflow-hidden" style={{width: '0.5em'}}>★</span>
+              </span>
+            )
+          }
+
           return (
-            <span key={i} className={isFull || isHalf ? 'text-yellow-500' : 'text-gray-300'}>
-              {isHalf ? '★' : '★'}
+            <span key={i} className={isFull ? 'text-yellow-500' : 'text-gray-300'}>
+              ★
             </span>
           )
         })}
