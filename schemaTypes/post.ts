@@ -457,7 +457,7 @@ export default defineType({
             name: 'overallRating',
             title: 'Overall Rating',
             type: 'number',
-            validation: (Rule) => Rule.min(1).max(5).precision(0.5),
+            validation: (Rule) => Rule.min(1).max(5),
             options: {
                 list: [
                     { title: '1 Star', value: 1 },
