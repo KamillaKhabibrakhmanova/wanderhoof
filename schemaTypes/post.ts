@@ -156,9 +156,9 @@ export default defineType({
         defineField({
             name: 'totalPrice',
             title: 'Total Price',
-            type: 'number',
+            type: 'string',
             hidden: ({document}) => document?.postType !== 'dayRideReview',
-            description: 'Total price for the day ride'
+            description: 'Total price with currency (e.g., "$50 USD", "€45 EUR ($50 USD)", "2000 THB (~$60 USD)")'
         }),
         defineField({
             name: 'pricePerDay',
