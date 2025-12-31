@@ -26,9 +26,12 @@ const postQuery = groq`*[_type == "post" && slug.current == $slug ${draftFilter}
     whenIWent,
     bookingInfo,
     pricePerDay,
+    totalPrice,
     priceNotes,
     totalDays,
     ridingDays,
+    duration,
+    experienceType,
     riderLevel,
     hoursInSaddle,
     rideType,
@@ -38,6 +41,8 @@ const postQuery = groq`*[_type == "post" && slug.current == $slug ${draftFilter}
     gettingThere,
     horsesAndTack,
     rideExperience,
+    theExperience,
+    horsesWelfare,
     accommodationFood,
     safetyInsurance,
     pointsTips,
@@ -439,6 +444,276 @@ export default async function PostPage({params}: PostPageProps) {
                     <a href={`mailto:${post.bookingInfo.email}`} className="text-tealpop hover:underline">
                       {post.bookingInfo.email}
                     </a>
+                  </div>
+                )}
+                {post.bookingInfo.bookingNotes && (
+                  <div className="mt-3">
+                    <p className="text-sm text-gray-700">{post.bookingInfo.bookingNotes}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </>
+      ) : post.postType === 'dayRideReview' ? (
+        <>
+          {/* Day Ride Key Details Box */}
+          <div className="not-prose bg-terracotta/5 border border-terracotta/20 rounded-lg p-8 mb-12 grid grid-cols-2 md:grid-cols-3 gap-6 shadow-sm">
+            {post.destination && (
+              <div>
+                <p className="text-sm text-gray-600">Destination</p>
+                <p className="font-semibold">{post.destination}</p>
+              </div>
+            )}
+            {post.operator && (
+              <div>
+                <p className="text-sm text-gray-600">Operator</p>
+                <p className="font-semibold">{post.operator}</p>
+              </div>
+            )}
+            {post.whenIWent && (
+              <div>
+                <p className="text-sm text-gray-600">When I Went</p>
+                <p className="font-semibold">{post.whenIWent}</p>
+              </div>
+            )}
+            {post.duration && (
+              <div>
+                <p className="text-sm text-gray-600">Duration</p>
+                <p className="font-semibold">{post.duration}</p>
+              </div>
+            )}
+            {post.totalPrice && (
+              <div>
+                <p className="text-sm text-gray-600">Price</p>
+                <p className="font-semibold">{post.totalPrice}</p>
+                {post.priceNotes && <p className="text-xs text-gray-500 mt-1">{post.priceNotes}</p>}
+              </div>
+            )}
+            {post.experienceType && post.experienceType.length > 0 && (
+              <div>
+                <p className="text-sm text-gray-600">Experience Type</p>
+                <p className="font-semibold capitalize">{post.experienceType.join(', ').replace(/([A-Z])/g, ' $1').trim()}</p>
+              </div>
+            )}
+            {post.riderLevel && post.riderLevel.length > 0 && (
+              <div>
+                <p className="text-sm text-gray-600">Rider Level</p>
+                <p className="font-semibold">{post.riderLevel.join(', ')}</p>
+              </div>
+            )}
+            {post.bestSeason && post.bestSeason.length > 0 && (
+              <div>
+                <p className="text-sm text-gray-600">Best Season</p>
+                <p className="font-semibold capitalize">{post.bestSeason.join(', ')}</p>
+              </div>
+            )}
+          </div>
+
+          {/* Overall Rating */}
+          {post.overallRating && (
+            <div className="not-prose mb-12 text-center">
+              <h2 className="text-3xl font-fraunces text-terracotta mb-3">Overall Rating</h2>
+              <div className="flex items-center justify-center text-5xl">
+                {renderStars(post.overallRating)}
+              </div>
+            </div>
+          )}
+
+          {/* Ratings */}
+          {(post.horsesAndTackRating || post.rideExperienceRating || post.valueRating) && (
+            <div className="not-prose mb-12">
+              <h2 className="text-2xl font-fraunces text-terracotta mb-6">Ratings</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {post.horsesAndTackRating && (
+                  <a href="#horses-welfare" className="bg-amber-50 border border-amber-200/50 rounded-lg p-4 hover:bg-amber-100 transition-colors cursor-pointer block no-underline">
+                    <p className="font-semibold mb-2 text-amber-900">Horses & Welfare</p>
+                    {renderStars(post.horsesAndTackRating)}
+                  </a>
+                )}
+                {post.rideExperienceRating && (
+                  <a href="#the-experience" className="bg-emerald-50 border border-emerald-200/50 rounded-lg p-4 hover:bg-emerald-100 transition-colors cursor-pointer block no-underline">
+                    <p className="font-semibold mb-2 text-emerald-900">Ride Experience</p>
+                    {renderStars(post.rideExperienceRating)}
+                  </a>
+                )}
+                {post.valueRating && (
+                  <a href="#value-for-money" className="bg-purple-50 border border-purple-200/50 rounded-lg p-4 hover:bg-purple-100 transition-colors cursor-pointer block no-underline">
+                    <p className="font-semibold mb-2 text-purple-900">Value for Money</p>
+                    {renderStars(post.valueRating)}
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+
+          {post.quickVerdict && (
+            <div className="mb-8 bg-sage/30 border border-deepgreen/20 rounded-lg p-6">
+              <h2 className="text-terracotta mb-4">Quick Verdict</h2>
+              <div className="text-lg leading-relaxed">
+                <PortableText value={post.quickVerdict} components={portableTextComponents} />
+              </div>
+            </div>
+          )}
+
+          {/* Photo Gallery */}
+          {post.gallery && post.gallery.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-fraunces text-terracotta mb-6">Photo Gallery ({post.gallery.length} photos)</h2>
+              <Gallery images={post.gallery} />
+            </div>
+          )}
+
+          {/* Main Narrative Sections - Day Ride Specific */}
+          {post.theExperience && (
+            <div id="the-experience" className="mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <h2 className="text-2xl font-fraunces text-terracotta">The Experience</h2>
+                {post.rideExperienceRating && (
+                  <div className="flex items-center gap-1 text-sm">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className={i < post.rideExperienceRating ? 'text-yellow-500' : 'text-gray-300'}>
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <PortableText value={post.theExperience} components={portableTextComponents} />
+            </div>
+          )}
+
+          {post.horsesWelfare && (
+            <div id="horses-welfare" className="mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <h2 className="text-2xl font-fraunces text-terracotta">Horses & Welfare</h2>
+                {post.horsesAndTackRating && (
+                  <div className="flex items-center gap-1 text-sm">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className={i < post.horsesAndTackRating ? 'text-yellow-500' : 'text-gray-300'}>
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <PortableText value={post.horsesWelfare} components={portableTextComponents} />
+            </div>
+          )}
+
+          {post.valueForMoneyDescription && (
+            <div id="value-for-money" className="mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <h2 className="text-2xl font-fraunces text-terracotta">Value for Money</h2>
+                {post.valueRating && (
+                  <div className="flex items-center gap-1 text-sm">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className={i < post.valueRating ? 'text-yellow-500' : 'text-gray-300'}>
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <PortableText value={post.valueForMoneyDescription} components={portableTextComponents} />
+            </div>
+          )}
+
+          {/* Supplementary Info - Collapsible */}
+          {post.gettingThere && (
+            <Accordion title="Getting There" defaultOpen={false}>
+              <PortableText value={post.gettingThere} components={portableTextComponents} />
+            </Accordion>
+          )}
+
+          {/* Pros & Cons */}
+          {(post.pros || post.cons) && (
+            <div className="mb-8 border border-deepgreen/20 rounded-lg p-6">
+              <h2 className="text-terracotta mb-4">Pros & Cons</h2>
+              {post.pros && post.pros.length > 0 && (
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold text-green-700">Pros</h3>
+                  <ul className="list-disc list-inside space-y-1">
+                    {post.pros.map((pro: string, i: number) => (
+                      <li key={i}>{pro}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {post.cons && post.cons.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold text-red-700">Cons</h3>
+                  <ul className="list-disc list-inside space-y-1">
+                    {post.cons.map((con: string, i: number) => (
+                      <li key={i}>{con}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+
+          {post.finalVerdict && (
+            <div className="mb-8 bg-sage/30 border border-deepgreen/20 rounded-lg p-6">
+              <h2 className="text-terracotta mb-4">Final Verdict</h2>
+              <div className="text-lg leading-relaxed">
+                <PortableText value={post.finalVerdict} components={portableTextComponents} />
+              </div>
+            </div>
+          )}
+
+          {/* Affiliate Links */}
+          {post.affiliateLinks && post.affiliateLinks.length > 0 && (
+            <div className="not-prose bg-amber-50/30 border border-amber-200/50 rounded-lg p-6 mb-8">
+              <h2 className="text-2xl font-fraunces text-terracotta mb-4">Recommended Gear & Resources</h2>
+              <div className="grid md:grid-cols-2 gap-3">
+                {post.affiliateLinks.map((item: any, i: number) => (
+                  <a
+                    key={i}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 bg-white/50 rounded border border-amber-200/30 hover:bg-white transition-colors"
+                  >
+                    <div>
+                      <p className="font-semibold text-deepgreen">{item.product}</p>
+                      <p className="text-xs text-gray-500 capitalize">{item.category}</p>
+                    </div>
+                    <span className="text-tealpop">→</span>
+                  </a>
+                ))}
+              </div>
+              <p className="text-xs text-gray-500 mt-4 italic">
+                * Some links may be affiliate links. We may earn a commission at no extra cost to you.
+              </p>
+            </div>
+          )}
+
+          {/* Booking Information */}
+          {post.bookingInfo && (
+            <div className="not-prose bg-blue-50/50 border border-blue-200/50 rounded-lg p-6 mb-8">
+              <h2 className="text-2xl font-fraunces text-terracotta mb-4">Booking Information</h2>
+              <div className="space-y-2">
+                {post.bookingInfo.website && (
+                  <div>
+                    <span className="text-sm text-gray-600">Website: </span>
+                    <a href={post.bookingInfo.website} target="_blank" rel="noopener noreferrer" className="text-tealpop hover:underline">
+                      {post.bookingInfo.website}
+                    </a>
+                  </div>
+                )}
+                {post.bookingInfo.email && (
+                  <div>
+                    <span className="text-sm text-gray-600">Email: </span>
+                    <a href={`mailto:${post.bookingInfo.email}`} className="text-tealpop hover:underline">
+                      {post.bookingInfo.email}
+                    </a>
+                  </div>
+                )}
+                {post.bookingInfo.bookingLeadTime && (
+                  <div>
+                    <span className="text-sm text-gray-600">Booking Lead Time: </span>
+                    <span className="text-sm text-gray-700">{post.bookingInfo.bookingLeadTime}</span>
                   </div>
                 )}
                 {post.bookingInfo.bookingNotes && (
