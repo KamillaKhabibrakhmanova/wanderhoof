@@ -91,9 +91,9 @@ export default async function PostPage({params}: PostPageProps) {
 
           if (isHalf) {
             return (
-              <span key={i} className="relative inline-block" style={{width: '1em'}}>
+              <span key={i} className="relative inline-flex items-center" style={{width: '1em'}}>
                 <span className="absolute text-gray-300">★</span>
-                <span className="absolute text-yellow-500 overflow-hidden" style={{width: '0.5em'}}>★</span>
+                <span className="text-yellow-500" style={{overflow: 'hidden', width: '0.5em'}}>★</span>
               </span>
             )
           }
