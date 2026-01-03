@@ -16,6 +16,9 @@ interface Post {
   };
 }
 
+// Revalidate this page every hour
+export const revalidate = 3600;
+
 export default async function PostsPage() {
   const posts: Post[] = await client.fetch(allPostsQuery);
 

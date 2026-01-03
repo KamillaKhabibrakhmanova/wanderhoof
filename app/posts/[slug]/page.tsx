@@ -73,6 +73,9 @@ interface PostPageProps {
   params: Promise<{slug: string}>
 }
 
+// Revalidate this page every hour
+export const revalidate = 3600;
+
 export default async function PostPage({params}: PostPageProps) {
   const {slug} = await params
   const post = await client.fetch(postQuery, {slug})
