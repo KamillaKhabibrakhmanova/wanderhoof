@@ -41,7 +41,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <div className="relative">
           {/* Logo - positioned at top, extending beyond nav */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50 flex justify-center pt-2">
-            <div className="p-3 md:p-0 border border-gray-400">
+            <a
+              href="/"
+              className="inline-block border border-gray-400 transition-transform duration-300 ease-out hover:scale-105"
+            >
               <Image
                 src="/WanderhoofLogo.png"
                 alt="WanderHoof - The world is better on horseback."
@@ -50,7 +53,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 className="h-16 w-auto md:h-32"
                 priority
               />
-            </div>
+            </a>
           </div>
           
           {/* Navigation Bar - also starting at top, beneath logo */}
