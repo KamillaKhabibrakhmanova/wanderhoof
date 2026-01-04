@@ -39,11 +39,11 @@ export default function ContactPage() {
           Get in Touch
         </h1>
 
-        <div className="mb-12 text-center">
-          <p className="text-lg text-deepgreen leading-relaxed mb-4">
+        <div className="mb-12 text-center text-lg md:text-xl text-deepgreen/70 leading-relaxed">
+          <p className="mb-4">
             Have questions about a destination? Want to share your own horse trip experience? I'd love to hear from you!
           </p>
-          <p className="text-deepgreen">
+          <p>
             Email me directly at{' '}
             <a href="mailto:venessiel@gmail.com" className="text-tealpop hover:underline font-semibold">
               venessiel@gmail.com
