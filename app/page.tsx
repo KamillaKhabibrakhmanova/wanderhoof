@@ -36,12 +36,12 @@ export default async function Home() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-20">
+      <div className="content-container">
         <div className="text-center mb-16 md:mb-20">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-fraunces text-deepgreen mb-6 tracking-tight">
+          <h1 className="page-title">
             Latest Adventures
           </h1>
-          <p className="text-lg md:text-xl text-deepgreen/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="body-text max-w-3xl mx-auto">
             Stories from the trail, guides for fellow travelers, and the joy of exploring the world on horseback.
           </p>
         </div>

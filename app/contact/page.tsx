@@ -34,8 +34,8 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-cream">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-fraunces text-deepgreen mb-8 text-center">
+      <div className="content-container-narrow">
+        <h1 className="page-title text-center mb-8">
           Get in Touch
         </h1>
 
@@ -51,8 +51,8 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="bg-white/50 rounded-lg p-8 border border-deepgreen/10">
-          <h2 className="text-2xl font-fraunces text-terracotta mb-6">Send a Message</h2>
+        <div className="card">
+          <h2 className="subsection-title">Send a Message</h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>

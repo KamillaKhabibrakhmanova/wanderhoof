@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-cream">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className="content-container-narrow">
         <article className="prose prose-lg max-w-none">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-fraunces text-deepgreen mb-8 text-center">
+          <h1 className="page-title text-center">
             About Wanderhoof
           </h1>
 
@@ -20,7 +20,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-fraunces text-terracotta mt-12 mb-4">
+          <h2 className="section-title mt-12">
             How I Almost Got Stranded in Kazakhstan (And Why I Started This Blog)
           </h2>
 
@@ -32,7 +32,7 @@ export default function AboutPage() {
             That's when it hit me: horse trips are too expensive, too precious, and too hard to come by to leave to chance and the promise of a business dealer.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-fraunces text-terracotta mt-12 mb-4">
+          <h2 className="section-title mt-12">
             The Long Way Back to Horses
           </h2>
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
             Fast forward to the pandemic. Finally, having found my footing in my career, I was researching the next steps expected from a 30s career girl - co-ops and daycare costs - while uninspired by all of it. I started <em>The Artist's Way</em>, and many of the exercises centered on what excited me as a child. Horses came flooding back—all those feelings I'd buried. One day, I decided to just tour some barns near my parents' house. And now? I live in Manhattan, ride once a week on Long Island, and spend an embarrassing amount of time scheming about how to get more saddle time during my vacations.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-fraunces text-terracotta mt-12 mb-4">
+          <h2 className="section-title mt-12">
             The Mexico Trip That Changed Everything
           </h2>
 
@@ -87,7 +87,7 @@ export default function AboutPage() {
             Horse trips are staggeringly expensive. A week-long riding vacation can easily cost several thousand dollars. And when you're someone like me, with a good job that allows for travel but definitely not a trust fund, you can't afford to get it wrong.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-fraunces text-terracotta mt-12 mb-4">
+          <h2 className="section-title mt-12">
             What Wanderhoof Is All About
           </h2>
 

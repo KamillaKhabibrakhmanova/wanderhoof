@@ -137,7 +137,7 @@ export default async function PostPage({params}: PostPageProps) {
   return (
     <article className="prose mx-auto text-deepgreen max-w-5xl">
       <div className="px-6 pt-6">
-        <h1 className="text-terracotta font-fraunces mb-4 text-center">{post.title}</h1>
+        <h1 className="page-title text-terracotta text-center">{post.title}</h1>
       </div>
 
       {/* Main Image */}
@@ -221,7 +221,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Overall Rating */}
           {post.overallRating && (
             <div className="not-prose mb-12 text-center">
-              <h2 className="text-3xl font-fraunces text-terracotta mb-3">Overall Rating</h2>
+              <h2 className="section-title">Overall Rating</h2>
               <div className="flex items-center justify-center text-5xl">
                 {renderStars(post.overallRating)}
               </div>
@@ -231,7 +231,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Ratings */}
           {(post.horsesAndTackRating || post.rideExperienceRating || post.accommodationFoodRating || post.valueRating) && (
             <div className="not-prose mb-12">
-              <h2 className="text-2xl font-fraunces text-terracotta mb-6">Ratings</h2>
+              <h2 className="subsection-title">Ratings</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {post.horsesAndTackRating && (
                   <a href="#horses-tack" className="bg-amber-50 border border-amber-200/50 rounded-lg p-4 hover:bg-amber-100 transition-colors cursor-pointer block no-underline">
@@ -273,7 +273,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Photo Gallery */}
           {post.gallery && post.gallery.length > 0 && (
             <div className="mb-12">
-              <h2 className="text-2xl font-fraunces text-terracotta mb-6">Photo Gallery ({post.gallery.length} photos)</h2>
+              <h2 className="subsection-title">Photo Gallery ({post.gallery.length} photos)</h2>
               <Gallery images={post.gallery} />
             </div>
           )}
@@ -414,7 +414,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Affiliate Links */}
           {post.affiliateLinks && post.affiliateLinks.length > 0 && (
             <div className="not-prose bg-amber-50/30 border border-amber-200/50 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-fraunces text-terracotta mb-4">Recommended Gear & Resources</h2>
+              <h2 className="subsection-title">Recommended Gear & Resources</h2>
               <div className="grid md:grid-cols-2 gap-3">
                 {post.affiliateLinks.map((item: any, i: number) => (
                   <a
@@ -441,7 +441,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Booking Information */}
           {post.bookingInfo && (
             <div className="not-prose bg-blue-50/50 border border-blue-200/50 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-fraunces text-terracotta mb-4">Booking Information</h2>
+              <h2 className="subsection-title">Booking Information</h2>
               <div className="space-y-2">
                 {post.bookingInfo.website && (
                   <div>
@@ -526,7 +526,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Overall Rating */}
           {post.overallRating && (
             <div className="not-prose mb-12 text-center">
-              <h2 className="text-3xl font-fraunces text-terracotta mb-3">Overall Rating</h2>
+              <h2 className="section-title">Overall Rating</h2>
               <div className="flex items-center justify-center text-5xl">
                 {renderStars(post.overallRating)}
               </div>
@@ -536,7 +536,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Ratings */}
           {(post.horsesAndTackRating || post.rideExperienceRating || post.valueRating) && (
             <div className="not-prose mb-12">
-              <h2 className="text-2xl font-fraunces text-terracotta mb-6">Ratings</h2>
+              <h2 className="subsection-title">Ratings</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {post.horsesAndTackRating && (
                   <a href="#horses-welfare" className="bg-amber-50 border border-amber-200/50 rounded-lg p-4 hover:bg-amber-100 transition-colors cursor-pointer block no-underline">
@@ -572,7 +572,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Photo Gallery */}
           {post.gallery && post.gallery.length > 0 && (
             <div className="mb-12">
-              <h2 className="text-2xl font-fraunces text-terracotta mb-6">Photo Gallery ({post.gallery.length} photos)</h2>
+              <h2 className="subsection-title">Photo Gallery ({post.gallery.length} photos)</h2>
               <Gallery images={post.gallery} />
             </div>
           )}
@@ -678,7 +678,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Affiliate Links */}
           {post.affiliateLinks && post.affiliateLinks.length > 0 && (
             <div className="not-prose bg-amber-50/30 border border-amber-200/50 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-fraunces text-terracotta mb-4">Recommended Gear & Resources</h2>
+              <h2 className="subsection-title">Recommended Gear & Resources</h2>
               <div className="grid md:grid-cols-2 gap-3">
                 {post.affiliateLinks.map((item: any, i: number) => (
                   <a
@@ -705,7 +705,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Booking Information */}
           {post.bookingInfo && (
             <div className="not-prose bg-blue-50/50 border border-blue-200/50 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-fraunces text-terracotta mb-4">Booking Information</h2>
+              <h2 className="subsection-title">Booking Information</h2>
               <div className="space-y-2">
                 {post.bookingInfo.website && (
                   <div>
