@@ -135,7 +135,7 @@ export default async function PostPage({params}: PostPageProps) {
   }
 
   return (
-    <article className="prose mx-auto text-deepgreen max-w-5xl">
+    <article className="mx-auto max-w-5xl text-lg md:text-xl text-deepgreen/70 leading-relaxed">
       <div className="px-6 pt-6">
         <h1 className="page-title text-terracotta text-center">{post.title}</h1>
       </div>
