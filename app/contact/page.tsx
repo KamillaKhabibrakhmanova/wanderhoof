@@ -35,24 +35,22 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-cream">
       <div className="content-container-narrow">
-        <h1 className="page-title text-center mb-8">
-          Get in Touch
-        </h1>
+        <h1 className="text-center mb-8">Get in Touch</h1>
 
-        <div className="mb-12 text-center text-lg md:text-xl text-deepgreen/70 leading-relaxed">
-          <p className="mb-4">
+        <div className="mb-12 text-center">
+          <p>
             Have questions about a destination? Want to share your own horse trip experience? I'd love to hear from you!
           </p>
           <p>
             Email me directly at{' '}
-            <a href="mailto:venessiel@gmail.com" className="text-tealpop hover:underline font-semibold">
+            <a href="mailto:venessiel@gmail.com" className="font-semibold">
               venessiel@gmail.com
             </a>
           </p>
         </div>
 
         <div className="card">
-          <h2 className="subsection-title">Send a Message</h2>
+          <h2>Send a Message</h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>

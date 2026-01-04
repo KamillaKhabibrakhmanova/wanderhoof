@@ -122,7 +122,6 @@ export default async function PostPage({params}: PostPageProps) {
             href={value?.href}
             target={target}
             rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-            className="text-tealpop hover:underline"
           >
             {children}
           </a>
@@ -130,14 +129,14 @@ export default async function PostPage({params}: PostPageProps) {
       },
     },
     block: {
-      normal: ({children}: any) => <p className="mb-4">{children}</p>,
+      normal: ({children}: any) => <p>{children}</p>,
     },
   }
 
   return (
-    <article className="mx-auto max-w-5xl text-lg md:text-xl text-deepgreen/70 leading-relaxed">
+    <article className="mx-auto max-w-5xl">
       <div className="px-6 pt-6">
-        <h1 className="page-title text-terracotta text-center">{post.title}</h1>
+        <h1 className="text-center">{post.title}</h1>
       </div>
 
       {/* Main Image */}
@@ -221,7 +220,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Overall Rating */}
           {post.overallRating && (
             <div className="not-prose mb-12 text-center">
-              <h2 className="section-title">Overall Rating</h2>
+              <h2>Overall Rating</h2>
               <div className="flex items-center justify-center text-5xl">
                 {renderStars(post.overallRating)}
               </div>
@@ -231,7 +230,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Ratings */}
           {(post.horsesAndTackRating || post.rideExperienceRating || post.accommodationFoodRating || post.valueRating) && (
             <div className="not-prose mb-12">
-              <h2 className="subsection-title">Ratings</h2>
+              <h2>Ratings</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {post.horsesAndTackRating && (
                   <a href="#horses-tack" className="bg-amber-50 border border-amber-200/50 rounded-lg p-4 hover:bg-amber-100 transition-colors cursor-pointer block no-underline">
@@ -263,8 +262,8 @@ export default async function PostPage({params}: PostPageProps) {
 
           {post.quickVerdict && (
             <div className="mb-8 bg-sage/30 border border-deepgreen/20 rounded-lg p-6">
-              <h2 className="text-terracotta mb-4">Quick Verdict</h2>
-              <div className="text-lg leading-relaxed">
+              <h2>Quick Verdict</h2>
+              <div>
                 <PortableText value={post.quickVerdict} components={portableTextComponents} />
               </div>
             </div>
@@ -274,7 +273,7 @@ export default async function PostPage({params}: PostPageProps) {
           {post.horsesAndTack && (
             <div id="horses-tack" className="mb-8">
               <div className="flex items-center gap-3 mb-4">
-                <h2 className="text-2xl font-fraunces text-terracotta">Horses and Tack</h2>
+                <h2>Horses and Tack</h2>
                 {post.horsesAndTackRating && (
                   <div className="flex items-center gap-1 text-sm">
                     {[...Array(5)].map((_, i) => (
@@ -292,7 +291,7 @@ export default async function PostPage({params}: PostPageProps) {
           {post.rideExperience && (
             <div id="ride-experience" className="mb-8">
               <div className="flex items-center gap-3 mb-4">
-                <h2 className="text-2xl font-fraunces text-terracotta">Ride Experience</h2>
+                <h2>Ride Experience</h2>
                 {post.rideExperienceRating && (
                   <div className="flex items-center gap-1 text-sm">
                     {[...Array(5)].map((_, i) => (
@@ -310,7 +309,7 @@ export default async function PostPage({params}: PostPageProps) {
           {post.accommodationFood && (
             <div id="accommodation-food" className="mb-8">
               <div className="flex items-center gap-3 mb-4">
-                <h2 className="text-2xl font-fraunces text-terracotta">Accommodation & Food</h2>
+                <h2>Accommodation & Food</h2>
                 {post.accommodationFoodRating && (
                   <div className="flex items-center gap-1 text-sm">
                     {[...Array(5)].map((_, i) => (
@@ -328,7 +327,7 @@ export default async function PostPage({params}: PostPageProps) {
           {post.valueForMoneyDescription && (
             <div id="value-for-money" className="mb-8">
               <div className="flex items-center gap-3 mb-4">
-                <h2 className="text-2xl font-fraunces text-terracotta">Value for Money</h2>
+                <h2>Value for Money</h2>
                 {post.valueRating && (
                   <div className="flex items-center gap-1 text-sm">
                     {[...Array(5)].map((_, i) => (
@@ -370,11 +369,11 @@ export default async function PostPage({params}: PostPageProps) {
 
           {(post.pros || post.cons) && (
             <div className="mb-8 border border-deepgreen/20 rounded-lg p-6">
-              <h2 className="text-terracotta mb-4">Pros & Cons</h2>
+              <h2>Pros & Cons</h2>
               {post.pros && post.pros.length > 0 && (
                 <div className="mb-4">
-                  <h3 className="text-lg font-semibold text-green-700">Pros</h3>
-                  <ul className="list-disc list-inside space-y-1">
+                  <h3 className="text-green-700">Pros</h3>
+                  <ul className="list-disc list-inside">
                     {post.pros.map((pro: string, i: number) => (
                       <li key={i}>{pro}</li>
                     ))}
@@ -383,8 +382,8 @@ export default async function PostPage({params}: PostPageProps) {
               )}
               {post.cons && post.cons.length > 0 && (
                 <div>
-                  <h3 className="text-lg font-semibold text-red-700">Cons</h3>
-                  <ul className="list-disc list-inside space-y-1">
+                  <h3 className="text-red-700">Cons</h3>
+                  <ul className="list-disc list-inside">
                     {post.cons.map((con: string, i: number) => (
                       <li key={i}>{con}</li>
                     ))}
@@ -396,8 +395,8 @@ export default async function PostPage({params}: PostPageProps) {
 
           {post.finalVerdict && (
             <div className="mb-8 bg-sage/30 border border-deepgreen/20 rounded-lg p-6">
-              <h2 className="text-terracotta mb-4">Final Verdict</h2>
-              <div className="text-lg leading-relaxed">
+              <h2>Final Verdict</h2>
+              <div>
                 <PortableText value={post.finalVerdict} components={portableTextComponents} />
               </div>
             </div>
@@ -406,7 +405,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Affiliate Links */}
           {post.affiliateLinks && post.affiliateLinks.length > 0 && (
             <div className="not-prose bg-amber-50/30 border border-amber-200/50 rounded-lg p-6 mb-8">
-              <h2 className="subsection-title">Recommended Gear & Resources</h2>
+              <h2>Recommended Gear & Resources</h2>
               <div className="grid md:grid-cols-2 gap-3">
                 {post.affiliateLinks.map((item: any, i: number) => (
                   <a
@@ -433,7 +432,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Booking Information */}
           {post.bookingInfo && (
             <div className="not-prose bg-blue-50/50 border border-blue-200/50 rounded-lg p-6 mb-8">
-              <h2 className="subsection-title">Booking Information</h2>
+              <h2>Booking Information</h2>
               <div className="space-y-2">
                 {post.bookingInfo.website && (
                   <div>
@@ -453,7 +452,7 @@ export default async function PostPage({params}: PostPageProps) {
                 )}
                 {post.bookingInfo.bookingNotes && (
                   <div className="mt-3">
-                    <p className="text-sm text-gray-700">{post.bookingInfo.bookingNotes}</p>
+                    <p>{post.bookingInfo.bookingNotes}</p>
                   </div>
                 )}
               </div>
@@ -463,7 +462,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Photo Gallery */}
           {post.gallery && post.gallery.length > 0 && (
             <div className="mb-12">
-              <h2 className="subsection-title">Photo Gallery ({post.gallery.length} photos)</h2>
+              <h2>Photo Gallery ({post.gallery.length} photos)</h2>
               <Gallery images={post.gallery} />
             </div>
           )}
@@ -526,7 +525,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Overall Rating */}
           {post.overallRating && (
             <div className="not-prose mb-12 text-center">
-              <h2 className="section-title">Overall Rating</h2>
+              <h2>Overall Rating</h2>
               <div className="flex items-center justify-center text-5xl">
                 {renderStars(post.overallRating)}
               </div>
@@ -536,7 +535,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Ratings */}
           {(post.horsesAndTackRating || post.rideExperienceRating || post.valueRating) && (
             <div className="not-prose mb-12">
-              <h2 className="subsection-title">Ratings</h2>
+              <h2>Ratings</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {post.horsesAndTackRating && (
                   <a href="#horses-welfare" className="bg-amber-50 border border-amber-200/50 rounded-lg p-4 hover:bg-amber-100 transition-colors cursor-pointer block no-underline">
@@ -562,8 +561,8 @@ export default async function PostPage({params}: PostPageProps) {
 
           {post.quickVerdict && (
             <div className="mb-8 bg-sage/30 border border-deepgreen/20 rounded-lg p-6">
-              <h2 className="text-terracotta mb-4">Quick Verdict</h2>
-              <div className="text-lg leading-relaxed">
+              <h2>Quick Verdict</h2>
+              <div>
                 <PortableText value={post.quickVerdict} components={portableTextComponents} />
               </div>
             </div>
@@ -573,7 +572,7 @@ export default async function PostPage({params}: PostPageProps) {
           {post.theExperience && (
             <div id="the-experience" className="mb-8">
               <div className="flex items-center gap-3 mb-4">
-                <h2 className="text-2xl font-fraunces text-terracotta">The Experience</h2>
+                <h2>The Experience</h2>
                 {post.rideExperienceRating && (
                   <div className="flex items-center gap-1 text-sm">
                     {[...Array(5)].map((_, i) => (
@@ -591,7 +590,7 @@ export default async function PostPage({params}: PostPageProps) {
           {post.horsesWelfare && (
             <div id="horses-welfare" className="mb-8">
               <div className="flex items-center gap-3 mb-4">
-                <h2 className="text-2xl font-fraunces text-terracotta">Horses & Welfare</h2>
+                <h2>Horses & Welfare</h2>
                 {post.horsesAndTackRating && (
                   <div className="flex items-center gap-1 text-sm">
                     {[...Array(5)].map((_, i) => (
@@ -609,7 +608,7 @@ export default async function PostPage({params}: PostPageProps) {
           {post.valueForMoneyDescription && (
             <div id="value-for-money" className="mb-8">
               <div className="flex items-center gap-3 mb-4">
-                <h2 className="text-2xl font-fraunces text-terracotta">Value for Money</h2>
+                <h2>Value for Money</h2>
                 {post.valueRating && (
                   <div className="flex items-center gap-1 text-sm">
                     {[...Array(5)].map((_, i) => (
@@ -634,11 +633,11 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Pros & Cons */}
           {(post.pros || post.cons) && (
             <div className="mb-8 border border-deepgreen/20 rounded-lg p-6">
-              <h2 className="text-terracotta mb-4">Pros & Cons</h2>
+              <h2>Pros & Cons</h2>
               {post.pros && post.pros.length > 0 && (
                 <div className="mb-4">
-                  <h3 className="text-lg font-semibold text-green-700">Pros</h3>
-                  <ul className="list-disc list-inside space-y-1">
+                  <h3 className="text-green-700">Pros</h3>
+                  <ul className="list-disc list-inside">
                     {post.pros.map((pro: string, i: number) => (
                       <li key={i}>{pro}</li>
                     ))}
@@ -647,8 +646,8 @@ export default async function PostPage({params}: PostPageProps) {
               )}
               {post.cons && post.cons.length > 0 && (
                 <div>
-                  <h3 className="text-lg font-semibold text-red-700">Cons</h3>
-                  <ul className="list-disc list-inside space-y-1">
+                  <h3 className="text-red-700">Cons</h3>
+                  <ul className="list-disc list-inside">
                     {post.cons.map((con: string, i: number) => (
                       <li key={i}>{con}</li>
                     ))}
@@ -660,8 +659,8 @@ export default async function PostPage({params}: PostPageProps) {
 
           {post.finalVerdict && (
             <div className="mb-8 bg-sage/30 border border-deepgreen/20 rounded-lg p-6">
-              <h2 className="text-terracotta mb-4">Final Verdict</h2>
-              <div className="text-lg leading-relaxed">
+              <h2>Final Verdict</h2>
+              <div>
                 <PortableText value={post.finalVerdict} components={portableTextComponents} />
               </div>
             </div>
@@ -670,7 +669,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Affiliate Links */}
           {post.affiliateLinks && post.affiliateLinks.length > 0 && (
             <div className="not-prose bg-amber-50/30 border border-amber-200/50 rounded-lg p-6 mb-8">
-              <h2 className="subsection-title">Recommended Gear & Resources</h2>
+              <h2>Recommended Gear & Resources</h2>
               <div className="grid md:grid-cols-2 gap-3">
                 {post.affiliateLinks.map((item: any, i: number) => (
                   <a
@@ -697,7 +696,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Booking Information */}
           {post.bookingInfo && (
             <div className="not-prose bg-blue-50/50 border border-blue-200/50 rounded-lg p-6 mb-8">
-              <h2 className="subsection-title">Booking Information</h2>
+              <h2>Booking Information</h2>
               <div className="space-y-2">
                 {post.bookingInfo.website && (
                   <div>
@@ -718,12 +717,12 @@ export default async function PostPage({params}: PostPageProps) {
                 {post.bookingInfo.bookingLeadTime && (
                   <div>
                     <span className="text-sm text-gray-600">Booking Lead Time: </span>
-                    <span className="text-sm text-gray-700">{post.bookingInfo.bookingLeadTime}</span>
+                    <span>{post.bookingInfo.bookingLeadTime}</span>
                   </div>
                 )}
                 {post.bookingInfo.bookingNotes && (
                   <div className="mt-3">
-                    <p className="text-sm text-gray-700">{post.bookingInfo.bookingNotes}</p>
+                    <p>{post.bookingInfo.bookingNotes}</p>
                   </div>
                 )}
               </div>
@@ -733,7 +732,7 @@ export default async function PostPage({params}: PostPageProps) {
           {/* Photo Gallery */}
           {post.gallery && post.gallery.length > 0 && (
             <div className="mb-12">
-              <h2 className="subsection-title">Photo Gallery ({post.gallery.length} photos)</h2>
+              <h2>Photo Gallery ({post.gallery.length} photos)</h2>
               <Gallery images={post.gallery} />
             </div>
           )}

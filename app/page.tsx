@@ -37,10 +37,8 @@ export default async function Home() {
       </div>
 
       <div className="content-container">
-        <div className="text-center mb-16 md:mb-20 text-lg md:text-xl text-deepgreen/70 leading-relaxed">
-          <h1 className="page-title">
-            Latest Adventures
-          </h1>
+        <div className="text-center mb-16 md:mb-20">
+          <h1>Latest Adventures</h1>
           <p className="max-w-3xl mx-auto">
             Stories from the trail, guides for fellow travelers, and the joy of exploring the world on horseback.
           </p>

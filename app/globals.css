@@ -2,6 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Global Typography - applies to all HTML elements by default */
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl font-fraunces text-deepgreen mb-6 tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-fraunces text-terracotta mb-6;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-fraunces text-terracotta mb-4;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-fraunces text-deepgreen mb-3;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl font-semibold text-deepgreen mb-2;
+  }
+
+  h6 {
+    @apply text-base md:text-lg font-semibold text-deepgreen mb-2;
+  }
+
+  p {
+    @apply text-lg md:text-xl text-deepgreen/70 leading-relaxed mb-4;
+  }
+
+  a {
+    @apply text-tealpop hover:underline transition-colors duration-200;
+  }
+
+  ul, ol {
+    @apply text-lg md:text-xl text-deepgreen/70 leading-relaxed mb-4;
+  }
+
+  li {
+    @apply mb-2;
+  }
+
+  strong {
+    @apply font-semibold text-deepgreen;
+  }
+
+  em {
+    @apply italic;
+  }
+}
+
 @layer components {
   /* ========================================
      TYPOGRAPHY SYSTEM
