@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { client } from "../lib/sanity.client";
-import { allPostsQuery } from "../lib/sanity.queries";
+import { featuredPostsQuery } from "../lib/sanity.queries";
 import PostCard from "./components/PostCard";
 
 interface Post {
@@ -21,7 +21,7 @@ interface Post {
 export const revalidate = 3600;
 
 export default async function Home() {
-  const posts: Post[] = await client.fetch(allPostsQuery);
+  const posts: Post[] = await client.fetch(featuredPostsQuery);
 
   return (
     <main className="min-h-screen bg-cream -mt-10 md:-mt-20">
