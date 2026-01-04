@@ -270,14 +270,6 @@ export default async function PostPage({params}: PostPageProps) {
             </div>
           )}
 
-          {/* Photo Gallery */}
-          {post.gallery && post.gallery.length > 0 && (
-            <div className="mb-12">
-              <h2 className="subsection-title">Photo Gallery ({post.gallery.length} photos)</h2>
-              <Gallery images={post.gallery} />
-            </div>
-          )}
-
           {/* Main Narrative Sections */}
           {post.horsesAndTack && (
             <div id="horses-tack" className="mb-8">
@@ -467,6 +459,14 @@ export default async function PostPage({params}: PostPageProps) {
               </div>
             </div>
           )}
+
+          {/* Photo Gallery */}
+          {post.gallery && post.gallery.length > 0 && (
+            <div className="mb-12">
+              <h2 className="subsection-title">Photo Gallery ({post.gallery.length} photos)</h2>
+              <Gallery images={post.gallery} />
+            </div>
+          )}
         </>
       ) : post.postType === 'dayRideReview' ? (
         <>
@@ -566,14 +566,6 @@ export default async function PostPage({params}: PostPageProps) {
               <div className="text-lg leading-relaxed">
                 <PortableText value={post.quickVerdict} components={portableTextComponents} />
               </div>
-            </div>
-          )}
-
-          {/* Photo Gallery */}
-          {post.gallery && post.gallery.length > 0 && (
-            <div className="mb-12">
-              <h2 className="subsection-title">Photo Gallery ({post.gallery.length} photos)</h2>
-              <Gallery images={post.gallery} />
             </div>
           )}
 
@@ -735,6 +727,14 @@ export default async function PostPage({params}: PostPageProps) {
                   </div>
                 )}
               </div>
+            </div>
+          )}
+
+          {/* Photo Gallery */}
+          {post.gallery && post.gallery.length > 0 && (
+            <div className="mb-12">
+              <h2 className="subsection-title">Photo Gallery ({post.gallery.length} photos)</h2>
+              <Gallery images={post.gallery} />
             </div>
           )}
         </>
