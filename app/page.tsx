@@ -37,11 +37,16 @@ export default async function Home() {
       </div>
 
       <div className="content-container">
-        <div className="text-center mb-16 md:mb-20">
-          <h1>Latest Adventures</h1>
-          <p className="max-w-3xl mx-auto">
-            Stories from the trail, guides for fellow travelers, and the joy of exploring the world on horseback.
+        {/* Main Tagline */}
+        <div className="text-center mb-16 md:mb-24">
+          <p className="max-w-4xl mx-auto text-xl md:text-2xl text-deepgreen font-medium">
+            The blog for those who love traveling on horseback...but have the unfortunate burden of working for a living. I'll help you figure out which horse adventures are worth saving for—and how to make them happen on a real person's budget and PTO.
           </p>
+        </div>
+
+        {/* Latest Adventures Section */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2>Latest Adventures</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 md:gap-x-12 md:gap-y-16 max-w-6xl mx-auto">
