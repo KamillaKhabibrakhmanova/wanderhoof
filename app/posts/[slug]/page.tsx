@@ -12,6 +12,7 @@ const draftFilter = process.env.NODE_ENV === 'production'
 
 const postQuery = groq`*[_type == "post" && slug.current == $slug ${draftFilter}][0]{
     title,
+    excerpt,
     body,
     postType,
     mainImage{
@@ -75,6 +76,48 @@ interface PostPageProps {
 
 // Revalidate this page every hour
 export const revalidate = 3600;
+
+// Generate metadata for each post
+export async function generateMetadata({params}: PostPageProps) {
+  const {slug} = await params
+  const post = await client.fetch(postQuery, {slug})
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested post could not be found.',
+    }
+  }
+
+  const title = post.title
+  const description = post.excerpt || `Read about ${post.destination ? `horseback riding in ${post.destination}` : 'this horse adventure'} ${post.operator ? `with ${post.operator}` : ''}.`
+  const imageUrl = post.mainImage?.asset?.url || '/hero.JPEG'
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url: `https://wanderhoof.com/posts/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.mainImage?.alt || title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imageUrl],
+    },
+  }
+}
 
 export default async function PostPage({params}: PostPageProps) {
   const {slug} = await params
