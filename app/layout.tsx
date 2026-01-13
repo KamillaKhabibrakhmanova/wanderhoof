@@ -2,6 +2,7 @@ import './globals.css'
 import Image from 'next/image'
 import Script from 'next/script'
 import { Fraunces } from 'next/font/google'
+import Newsletter from './components/Newsletter'
 
 const fraunces = Fraunces({ 
   subsets: ['latin'],
@@ -155,14 +156,22 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         {/* Footer */}
         <footer className="bg-sage border-t border-gray-200 mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="text-center text-sm text-deepgreen/60">
-              <p className="mb-2">© {new Date().getFullYear()} WanderHoof. All rights reserved.</p>
-              <a
-                href="/privacy"
-                className="text-mutedpurple hover:text-tealpop transition-colors duration-200"
-              >
-                Privacy Policy
-              </a>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              {/* Newsletter Signup */}
+              <div>
+                <Newsletter />
+              </div>
+
+              {/* Footer Links */}
+              <div className="text-center md:text-right text-sm text-deepgreen/60">
+                <p className="mb-2">© {new Date().getFullYear()} WanderHoof. All rights reserved.</p>
+                <a
+                  href="/privacy"
+                  className="text-mutedpurple hover:text-tealpop transition-colors duration-200"
+                >
+                  Privacy Policy
+                </a>
+              </div>
             </div>
           </div>
         </footer>
