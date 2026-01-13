@@ -9,8 +9,52 @@ const fraunces = Fraunces({
 })
 
 export const metadata = {
-  title: 'WanderHoof',
-  description: 'Horseback travel blog',
+  title: {
+    default: 'WanderHoof - Horse Travel Adventures on a Real Budget',
+    template: '%s | WanderHoof'
+  },
+  description: 'The blog for those who love traveling on horseback but have the unfortunate burden of working for a living. Honest reviews, real budgets, and practical tips for horse adventures worldwide.',
+  keywords: ['horseback riding', 'horse travel', 'equestrian travel', 'riding vacations', 'horse trips', 'riding holidays', 'budget travel', 'horse adventures'],
+  authors: [{ name: 'Kamilla K' }],
+  creator: 'Kamilla K',
+  publisher: 'WanderHoof',
+  metadataBase: new URL('https://wanderhoof.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://wanderhoof.com',
+    title: 'WanderHoof - Horse Travel Adventures on a Real Budget',
+    description: 'The blog for those who love traveling on horseback but have the unfortunate burden of working for a living. Honest reviews, real budgets, and practical tips for horse adventures worldwide.',
+    siteName: 'WanderHoof',
+    images: [
+      {
+        url: '/hero.JPEG',
+        width: 1200,
+        height: 630,
+        alt: 'WanderHoof - Horse Travel Adventures',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WanderHoof - Horse Travel Adventures on a Real Budget',
+    description: 'The blog for those who love traveling on horseback but have the unfortunate burden of working for a living.',
+    images: ['/hero.JPEG'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
