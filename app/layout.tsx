@@ -164,10 +164,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
               {/* Footer Links */}
               <div className="text-center md:text-right text-sm text-deepgreen/60">
-                <p className="mb-2">© {new Date().getFullYear()} WanderHoof. All rights reserved.</p>
+                <div className="mb-2">© {new Date().getFullYear()} WanderHoof. All rights reserved.</div>
                 <a
                   href="/privacy"
-                  className="text-mutedpurple hover:text-tealpop transition-colors duration-200"
+                  className="hover:text-tealpop transition-colors duration-200"
                 >
                   Privacy Policy
                 </a>

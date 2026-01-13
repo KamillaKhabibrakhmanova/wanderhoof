@@ -30,8 +30,8 @@ export default function Newsletter() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
       {/* Text */}
-      <div className="text-sm text-deepgreen/60">
-        <div className="font-semibold mb-2">Join the Adventure</div>
+      <div className="text-sm text-deepgreen/60 text-center md:text-left">
+        <div className="text-base font-semibold text-terracotta mb-2">Join the Adventure</div>
         <div>Get honest reviews and budget tips in your inbox.</div>
       </div>
 
@@ -49,7 +49,7 @@ export default function Newsletter() {
 
           <button
             type="submit"
-            className="w-full bg-terracotta hover:bg-terracotta/90 text-white font-semibold py-2 px-4 text-sm rounded transition-colors"
+            className="bg-tealpop hover:bg-tealpop/90 text-white font-semibold py-2 px-6 text-sm rounded transition-colors"
           >
             Subscribe
           </button>
