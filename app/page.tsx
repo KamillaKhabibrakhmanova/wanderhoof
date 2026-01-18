@@ -40,7 +40,7 @@ export default async function Home() {
         {/* Main Tagline */}
         <div className="text-center mb-16 md:mb-24">
           <p className="max-w-4xl mx-auto text-xl md:text-2xl text-deepgreen font-medium">
-            The blog for those who love traveling on horseback...but have the unfortunate burden of working for a living. I'll help you figure out which horse adventures are worth saving for—and how to make them happen on a real person's budget and PTO.
+            The blog for those who love traveling on horseback...but have the unfortunate burden of working for a living. I'll help you figure out which horse adventures are worth your hard-earned money and limited PTO.
           </p>
         </div>
 

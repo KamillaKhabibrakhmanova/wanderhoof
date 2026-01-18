@@ -32,7 +32,7 @@ export default function Newsletter() {
       {/* Text */}
       <div className="text-sm text-deepgreen/60 text-center md:text-left">
         <div className="text-base font-semibold text-terracotta mb-2">Join the Adventure</div>
-        <div>Get honest reviews and budget tips in your inbox.</div>
+        <div>Get honest reviews and strategic trip planning tips.</div>
       </div>
 
       {/* Form */}

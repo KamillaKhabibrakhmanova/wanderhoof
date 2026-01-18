@@ -12,11 +12,11 @@ const fraunces = Fraunces({
 
 export const metadata = {
   title: {
-    default: 'WanderHoof - Horse Travel Adventures on a Real Budget',
+    default: 'WanderHoof - Horse travel reviews and tips for serious riders',
     template: '%s | WanderHoof'
   },
-  description: 'The blog for those who love traveling on horseback but have the unfortunate burden of working for a living. Honest reviews, real budgets, and practical tips for horse adventures worldwide.',
-  keywords: ['horseback riding', 'horse travel', 'equestrian travel', 'riding vacations', 'horse trips', 'riding holidays', 'budget travel', 'horse adventures'],
+  description: 'The blog for those who love traveling on horseback but have the unfortunate burden of working for a living. Honest reviews and strategic advice to help you choose the right horse adventures.',
+  keywords: ['horseback riding', 'horse travel', 'equestrian travel', 'riding vacations', 'horse trips', 'riding holidays', 'horse adventure reviews', 'horse travel planning'],
   authors: [{ name: 'Kamilla K' }],
   creator: 'Kamilla K',
   publisher: 'WanderHoof',
@@ -28,8 +28,8 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://wanderhoof.com',
-    title: 'WanderHoof - Horse Travel Adventures on a Real Budget',
-    description: 'The blog for those who love traveling on horseback but have the unfortunate burden of working for a living. Honest reviews, real budgets, and practical tips for horse adventures worldwide.',
+    title: 'WanderHoof - Horse travel reviews and tips for serious riders',
+    description: 'The blog for those who love traveling on horseback but have the unfortunate burden of working for a living. Honest reviews and strategic advice to help you choose the right horse adventures.',
     siteName: 'WanderHoof',
     images: [
       {
@@ -42,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WanderHoof - Horse Travel Adventures on a Real Budget',
-    description: 'The blog for those who love traveling on horseback but have the unfortunate burden of working for a living.',
+    title: 'WanderHoof - Horse travel reviews and tips for serious riders',
+    description: 'Honest reviews and strategic advice to help you choose the right horse adventures when you have limited vacation time.',
     images: ['/hero.JPEG'],
   },
   robots: {
