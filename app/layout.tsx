@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Script from 'next/script'
 import { Fraunces } from 'next/font/google'
 import Newsletter from './components/Newsletter'
+import MobileNav from './components/MobileNav'
 
 const fraunces = Fraunces({ 
   subsets: ['latin'],
@@ -136,15 +137,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                     Contact
                   </a>
                 </nav>
-                
-                {/* Mobile menu button */}
-                <div className="md:hidden">
-                  <button className="text-gray-700 hover:text-tealpop">
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                  </button>
-                </div>
+
+                {/* Mobile menu */}
+                <MobileNav />
               </div>
             </div>
           </header>
