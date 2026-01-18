@@ -39,7 +39,22 @@ export default defineType({
         }),
         defineArrayMember({
             type: 'image',
-            options: {hotspot: true}
+            options: {hotspot: true},
+            fields: [
+                {
+                    name: 'alt',
+                    title: 'Alt Text',
+                    type: 'string',
+                    description: 'Describe the image for screen readers (required for accessibility)',
+                    validation: (Rule) => Rule.required()
+                },
+                {
+                    name: 'caption',
+                    title: 'Caption',
+                    type: 'string',
+                    description: 'Optional caption to display below the image'
+                }
+            ]
         })
     ]
 })

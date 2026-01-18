@@ -4,6 +4,7 @@ import {groq} from 'next-sanity'
 import Image from 'next/image'
 import Gallery from '../../components/Gallery'
 import Accordion from '../../components/Accordion'
+import {urlFor} from '../../../lib/image'
 
 // Filter to exclude drafts in production
 const draftFilter = process.env.NODE_ENV === 'production'
@@ -173,6 +174,30 @@ export default async function PostPage({params}: PostPageProps) {
     },
     block: {
       normal: ({children}: any) => <p>{children}</p>,
+    },
+    types: {
+      image: ({value}: any) => {
+        if (!value?.asset) {
+          return null
+        }
+        return (
+          <div className="my-8">
+            <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden">
+              <Image
+                src={urlFor(value).width(1200).height(800).url()}
+                alt={value.alt || ''}
+                fill
+                className="object-cover"
+              />
+            </div>
+            {value.caption && (
+              <p className="text-center text-sm text-deepgreen/60 mt-2 italic">
+                {value.caption}
+              </p>
+            )}
+          </div>
+        )
+      },
     },
   }
 
